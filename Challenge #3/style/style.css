@@ -1,0 +1,209 @@
+/* 
+
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700
+
+- Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+- Weights: 400
+
+
+*/
+
+/* general setting css reset */
+
+:root {
+    --clr-bg: hsl(233, 47%, 7%);
+    --clr-bgCard: hsl(244, 38%, 16%);
+    --clr-title:  hsl(277, 64%, 61%);
+    --clr-main: hsl(0, 0%, 100%);
+    --clr-paragraph: hsla(0, 0%, 100%, 0.75);
+    --clr-stats: hsla(0, 0%, 100%, 0.6);
+
+    --fz-main: 1.5rem;
+
+    --ff-inter: 'Inter', sans-serif;
+
+    --ff-deca: 'Lexend Deca', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--clr-bg);
+}
+
+p {
+    line-height: 1.6;
+    font-size: calc(1rem + .4vw);
+    color: var(--clr-paragraph);
+    font-family: var(--ff-inter);
+    font-weight: 400;
+}
+
+h1 ,
+h2 ,
+h3 ,
+h4 ,
+h5 ,
+h6 {
+    line-height: 1.2;
+    color: var(--clr-main)
+}
+
+h1 {
+    font-size: calc(1.3rem + 1.1vw);
+    font-family: var(--ff-deca);
+}
+
+li {
+    font-size: calc(1.2rem + .6vw);
+    color: var(--clr-main);
+    font-weight: bold;
+    font-family: var(--ff-deca);
+}
+
+li > div {
+    color: var(--clr-stats); 
+    font-size: calc(.7rem + .3vw);
+    font-family: var(--ff-inter);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+ul , li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-different {
+    color: var(--clr-title);
+}
+
+/* header */
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.even-columns {
+    display: flex;
+    min-height: 100vh;
+    width: 70%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.even-columns > * {
+    flex: 1 1 50rem;
+    min-height: 55vh;
+}
+
+.even-columns > .col:first-child {
+    background: var(--clr-bgCard);
+}
+
+.even-columns > .col:first-child > .content {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 55vh;
+}
+
+.even-columns > .col:first-child > .content > h1 {
+    padding-bottom: 3rem;
+}
+
+.even-columns > .col:first-child > .content > .list {
+    display: flex;
+    margin: 3rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.even-columns > .col:last-child {
+    background:  linear-gradient(rgba(185, 42, 241, 0.4), rgba(185, 42, 241, 0.4)) ,url("../assets/image-header-desktop.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.even-columns > .col:first-child {
+    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;  
+}
+
+.even-columns > .col:last-child {
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;  
+}
+
+
+@media screen and (max-width: 562px) {
+    .even-columns {
+        flex-wrap: wrap;
+    }
+
+    .even-columns > .col:last-child {
+        border-bottom-right-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+        border-top-right-radius: 0;  
+    }
+
+    .even-columns > .col:first-child {
+        border-top-right-radius: 1.5rem;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 0;
+    }
+
+    .even-columns > * {
+    min-height: 45vh;
+}
+
+}
